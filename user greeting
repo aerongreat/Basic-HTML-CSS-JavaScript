@@ -14,6 +14,17 @@
 <button id="clearBtn">Clear</button><br>
 <h2 id="myh2"></h2>
 
-<script src="index.js"></script>
+<script>
+let user;
+document.getElementById("submitBtn").onclick = function(){
+  user = document.getElementById("username").value;
+  document.getElementById("myh2").innerHTML=  `Hello, ${user}! <br> How may I help you?`;
+  
+
+  document.getElementById("clearBtn").onclick = function() {
+    document.getElementById("myh2").innerHTML = ""; 
+  };
+}
+</script>
 </body>
 </html>
