@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  label{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  input{
+    border-color: green;
+  }
+  .ageForm{
+    margin: 200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #myButton{
+    margin-top: 10px;
+  }
+</style>
+  <title>My Website</title>
+</head>
+<body>
+  <div class="ageForm">
+    <label for="name">Enter your name:</label>
+    <br>
+    <input type="text" id="name">
+    <br>
+    <label for="age" class="myLabel">Enter your age: </label>
+    <br>
+    <input type="text" id="userAge">
+    <br>
+    <button id="myButton">Submit</button>
+    <p id="greet"></p>
+    <p id="result"></p>
+  
+  </div>
+  
+<script>
+const name = document.getElementById("name");
+const greet = document.getElementById("greet");
+const userAge = document.getElementById("userAge");
+const myBtn = document.getElementById("myButton");
+const resultElem = document.getElementById("result");
+let age = 0;
+
+myBtn.onclick= function (){
+  age  = userAge.value;
+  age = Number(age);
+
+  if(name.value){
+    greet.innerHTML = `Hello, ${name.value}!`;
+  }
+  if (age >= 100) {
+    resultElem.innerHTML = `You are too OLD to enter this site!`;
+  }
+   else if (age == 0){
+    resultElem.innerHTML = `You can't enter this site!`;
+  }
+   else if (age >= 18){
+    resultElem.innerHTML = `You are OLD enough to enter this site!`;
+  } 
+  else if (age < 18){
+    resultElem.innerHTML = `You are too YOUNG to enter this site!`;
+  }
+  else{
+    resultElem.innerHTML = `Sorry you entered wrong`;
+  }
+}
+</script>
+</body>
+</html>
