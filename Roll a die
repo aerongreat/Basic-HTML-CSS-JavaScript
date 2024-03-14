@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+    }
+    #roll{
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    #myBtn{
+      font-size: 3em;
+      padding: 5px 15px;
+      border-radius:20px;
+      background:#0b0c0b;
+      color: rgb(204, 255, 255);
+    }
+    #myLabel{
+      font-size: 6em;
+      font-weight: 700;
+      color: #121111;
+    }
+  </style>
+  <title>My Website</title>
+</head>
+<body>
+  <div id="roll">
+    <label id="myLabel"></label>
+  <br>
+  <button id="myBtn">Roll Die</button>
+</div>
+
+<!-- Button to trigger the dice roll -->
+<script>
+  // RANDOM NUMBER
+const myBtn = document.getElementById("myBtn");
+const myLabel = document.getElementById("myLabel");
+const min = 1;
+const max = 6;
+let randomNumber;
+
+myBtn.onclick = function(){
+  randomNumber = Math.floor(Math.random() * max) + min;
+  myLabel.innerHTML=randomNumber;
+}
+
+</script>
+</body>
+</html>
